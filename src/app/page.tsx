@@ -22,7 +22,7 @@ const Page = () => {
       <main>
         <section
           className="relative flex flex-col items-center justify-center min-h-[80vh] text-center p-6 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://source.unsplash.com/random/1600x900?water')" }}
+          style={{ backgroundImage: "url('/images/BG.jpg')" }}
         >
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="relative z-10">
@@ -39,7 +39,7 @@ const Page = () => {
         <section id="about" className="py-24 px-6">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div className="rounded-lg overflow-hidden shadow-2xl">
-              <Image src="https://source.unsplash.com/random/800x600?water,bottle" alt="About Tetra Sip" width={800} height={600} />
+              <Image src="/images/water bottle.jpg" alt="About Tetra Sip" width={800} height={600} />
             </div>
             <div>
               <h3 className="text-4xl font-bold text-gray-800">About Tetra Sip</h3>
