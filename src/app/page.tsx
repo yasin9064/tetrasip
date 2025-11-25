@@ -1,5 +1,5 @@
 
-import { ArrowRight, Bot, Image as ImageIcon, Wind, Zap, User } from "lucide-react";
+import { ArrowRight, Bot, Image as ImageIcon, Wind, Zap } from "lucide-react";
 import Image from "next/image";
 
 const Page = () => {
@@ -12,7 +12,6 @@ const Page = () => {
           <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
           <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
           <a href="#how-it-works" className="text-gray-700 hover:text-blue-600 transition-colors">How It Works</a>
-          <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">Testimonials</a>
           <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
         </nav>
         <button className="md:hidden">
@@ -96,38 +95,6 @@ const Page = () => {
               <div className="flex flex-col items-center">
                 <div className="flex justify-center items-center h-20 w-20 rounded-full bg-blue-100 text-blue-500 text-2xl font-bold">3</div>
                 <h4 className="text-xl font-semibold mt-4">Approve &amp; Order</h4>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="testimonials" className="py-24 px-6 bg-gray-50">
-          <div className="max-w-4xl mx-auto">
-            <h3 className="text-4xl font-bold text-center text-gray-800">What Our Clients Say</h3>
-            <div className="grid md:grid-cols-2 gap-12 mt-16">
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gray-200 mr-4 flex items-center justify-center">
-                    <User className="text-gray-500" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">John Doe</p>
-                    <p className="text-sm text-gray-500">CEO, Example Corp</p>
-                  </div>
-                </div>
-                <p className="text-gray-600">&quot;The custom water bottles from Tetra Sip were a huge hit at our conference. The quality was excellent, and the design process was a breeze.&quot;</p>
-              </div>
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gray-200 mr-4 flex items-center justify-center">
-                    <User className="text-gray-500" />
-                  </div>
-                  <div>
-                    <p className="font-semibold">Jane Smith</p>
-                    <p className="text-sm text-gray-500">Marketing Manager, Another Inc.</p>
-                  </div>
-                </div>
-                <p className="text-gray-600">&quot;We&apos;ve been using Tetra Sip for our corporate events for years. Their service is always reliable, and the bottles are a great way to promote our brand.&quot;</p>
               </div>
             </div>
           </div>

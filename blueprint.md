@@ -25,18 +25,18 @@ The website will have a modern, clean, and visually appealing design.
 *   **About Us Section:** A section introducing Tetra Sip and its mission.
 *   **Services Section:** A detailed overview of the customization options available.
 *   **How It Works Section:** A step-by-step guide to ordering custom-labeled water bottles.
-*   **Testimonials Section:** Customer reviews and testimonials.
 *   **Contact Form:** A simple form for users to get in touch.
 *   **Footer:** With links to social media and other relevant pages.
 
 ## Plan
 
-1.  **Phase 1: Landing Page (In Progress)**
+1.  **Phase 1: Landing Page (Completed)**
     *   [x] Create `blueprint.md`
-    *   [x] Design and build the landing page (`/app/page.tsx`) with the sections outlined above.
+    *   [x] Design and build the landing page (`/app/page.tsx`) with the initial sections.
     *   [x] Style the landing page using CSS modules (`/app/globals.css`).
     *   [x] Make the landing page responsive.
-    *   [ ] Modernize UI and add images.
+    *   [x] Modernize UI and add images.
+    *   [x] Remove Testimonials Section
 2.  **Phase 2: Additional Pages**
     *   [ ] Create a "Gallery" page to showcase examples of custom labels.
     *   [ ] Create a "Pricing" page.
