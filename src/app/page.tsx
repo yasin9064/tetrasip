@@ -30,7 +30,7 @@ const Page = () => {
               <a href="#designs" className="px-3 lg:px-4 py-2 text-sm lg:text-base text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition-all font-medium">Designs</a>
               <a href="#why-choose" className="px-3 lg:px-4 py-2 text-sm lg:text-base text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition-all font-medium">Why Choose Us</a>
               <a href="#services" className="px-3 lg:px-4 py-2 text-sm lg:text-base text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition-all font-medium">Services</a>
-              <a href="#contact" className="px-3 lg:px-4 py-2 text-sm lg:text-base bg-gradient-to-r from-cyan-600 to-teal-600 text-white rounded-lg hover:from-cyan-700 hover:to-teal-700 transition-all font-medium shadow-lg shadow-cyan-500/30">
+              <a href="#contact" className="px-3 lg:px-4 py-2 text-sm lg:text-base bg-linear-to-r from-cyan-600 to-teal-600 text-white rounded-lg hover:from-cyan-700 hover:to-teal-700 transition-all font-medium shadow-lg shadow-cyan-500/30">
                 Contact
               </a>
             </nav>
