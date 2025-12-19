@@ -1,0 +1,228 @@
+/* Reset & Base Styles */
+:root {
+    --bg-color: #0a0a0a;
+    --card-bg: #141414;
+    --text-main: #ffffff;
+    --text-muted: #a0a0a0;
+    --accent: #e63946;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: rgba(10, 10, 10, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.highlight {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+.cart-btn {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Hero Section */
+.hero {
+    height: 85vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.3), var(--bg-color));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+}
+
+.text-outline {
+    -webkit-text-stroke: 2px var(--text-main);
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: var(--text-main);
+    color: var(--bg-color);
+    font-weight: 700;
+    border-radius: 50px;
+    transition: transform 0.2s ease, background-color 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: var(--accent);
+    color: var(--text-main);
+}
+
+/* Sections */
+.section {
+    padding: 5rem 5%;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info {
+    padding: 1.5rem;
+}
+
+.card-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.btn-text:hover {
+    color: var(--text-main);
+    border-bottom-color: var(--text-main);
+}
+
+/* Footer */
+.footer {
+    padding: 4rem 5%;
+    border-top: 1px solid #222;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-brand h3 {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}

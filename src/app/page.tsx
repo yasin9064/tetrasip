@@ -1,125 +1,320 @@
+'use client';
 
-import { ArrowRight, Bot, Image as ImageIcon, Wind, Zap } from "lucide-react";
+import { ArrowRight, Menu, X, CheckCircle, Package, Truck, Shield, Award, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 const Page = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <div className="min-h-screen bg-white font-sans">
-      <header className="flex items-center justify-between p-6 shadow-md">
-        <h1 className="text-3xl font-bold text-blue-600">Tetra Sip</h1>
-        <nav className="hidden md:flex items-center space-x-8">
-          <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-          <a href="#about" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-          <a href="#services" className="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
-          <a href="#how-it-works" className="text-gray-700 hover:text-blue-600 transition-colors">How It Works</a>
-          <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
-        </nav>
-        <button className="md:hidden">
-          <Bot size={28} className="text-gray-700" />
-        </button>
-      </header>
-      <main>
-        <section
-          className="relative flex flex-col items-center justify-center min-h-[80vh] text-center p-6 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/BG.jpg')" }}
-        >
-          <div className="absolute inset-0 bg-black opacity-50"></div>
-          <div className="relative z-10">
-            <h2 className="text-6xl font-extrabold text-white">Your Brand, Your Water</h2>
-            <p className="text-xl text-gray-200 mt-4 max-w-3xl mx-auto">
-              Create a lasting impression with custom-labeled water bottles. Perfect for events, businesses, and personal use.
-            </p>
-            <button className="mt-8 px-10 py-5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-transform transform hover:scale-105 flex items-center mx-auto">
-              Get a Free Quote <ArrowRight className="ml-3" />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50 to-teal-50 font-sans">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-cyan-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 sm:h-20">
+            <div className="shrink-0">
+              <a href="#" className="flex items-center">
+                <Image 
+                  src="/images/TETRASIP.png" 
+                  alt="Tetra Sip Logo" 
+                  width={90} 
+                  height={30}
+                  className="h-6 sm:h-7 md:h-8 lg:h-10 w-auto transition-all"
+                  priority
+                />
+              </a>
+            </div>
+            <nav className="hidden md:flex items-center space-x-1">
+              <a href="#" className="px-3 lg:px-4 py-2 text-sm lg:text-base text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition-all font-medium">Home</a>
+              <a href="#designs" className="px-3 lg:px-4 py-2 text-sm lg:text-base text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition-all font-medium">Designs</a>
+              <a href="#why-choose" className="px-3 lg:px-4 py-2 text-sm lg:text-base text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition-all font-medium">Why Choose Us</a>
+              <a href="#services" className="px-3 lg:px-4 py-2 text-sm lg:text-base text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg transition-all font-medium">Services</a>
+              <a href="#contact" className="px-3 lg:px-4 py-2 text-sm lg:text-base bg-gradient-to-r from-cyan-600 to-teal-600 text-white rounded-lg hover:from-cyan-700 hover:to-teal-700 transition-all font-medium shadow-lg shadow-cyan-500/30">
+                Contact
+              </a>
+            </nav>
+            <button 
+              className="md:hidden p-2 text-gray-700 hover:text-cyan-600"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
+          {mobileMenuOpen && (
+            <nav className="md:hidden py-4 space-y-2">
+              <a href="#" className="block px-4 py-2 text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg" onClick={() => setMobileMenuOpen(false)}>Home</a>
+              <a href="#designs" className="block px-4 py-2 text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg" onClick={() => setMobileMenuOpen(false)}>Designs</a>
+              <a href="#why-choose" className="block px-4 py-2 text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg" onClick={() => setMobileMenuOpen(false)}>Why Choose Us</a>
+              <a href="#services" className="block px-4 py-2 text-gray-700 hover:text-cyan-600 hover:bg-cyan-50 rounded-lg" onClick={() => setMobileMenuOpen(false)}>Services</a>
+              <a href="#contact" className="block px-4 py-2 bg-gradient-to-r from-cyan-600 to-teal-600 text-white rounded-lg text-center" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+            </nav>
+          )}
+        </div>
+      </header>
+
+      <main>
+        {/* Hero Section */}
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/20 via-teal-500/20 to-cyan-400/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24 lg:py-32">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+              <div className="text-center lg:text-left order-2 lg:order-1">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight mb-4 sm:mb-6">
+                  Premium Custom
+                  <span className="block bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">
+                    Water Bottles
+                  </span>
+                </h2>
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0">
+                  Elevate your brand with premium quality, custom-designed water bottles. Perfect for events, corporate gifting, and special occasions.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-2 sm:px-0">
+                  <button className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-gradient-to-r from-cyan-600 to-teal-600 text-white font-bold rounded-xl hover:from-cyan-700 hover:to-teal-700 transition-all transform hover:scale-105 shadow-xl shadow-cyan-500/30 flex items-center justify-center">
+                    Get Free Quote <ArrowRight className="ml-2" size={18} />
+                  </button>
+                  <button className="px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-white text-cyan-600 font-bold rounded-xl hover:bg-cyan-50 transition-all border-2 border-cyan-600">
+                    View Designs
+                  </button>
+                </div>
+              </div>
+              <div className="relative order-1 lg:order-2 mb-8 lg:mb-0">
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                  <Image 
+                    src="/images/water bottle.jpg" 
+                    alt="Custom Water Bottles" 
+                    width={600} 
+                    height={700}
+                    className="w-full h-auto object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+                <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-16 h-16 sm:w-24 sm:h-24 bg-cyan-500 rounded-full opacity-20 blur-2xl"></div>
+                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-20 h-20 sm:w-32 sm:h-32 bg-teal-500 rounded-full opacity-20 blur-2xl"></div>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section id="about" className="py-24 px-6">
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div className="rounded-lg overflow-hidden shadow-2xl">
-              <Image src="/images/water bottle.jpg" alt="About Tetra Sip" width={800} height={600} />
-            </div>
-            <div>
-              <h3 className="text-4xl font-bold text-gray-800">About Tetra Sip</h3>
-              <p className="text-gray-600 mt-6 text-lg">
-                Tetra Sip was born from a simple idea: to provide businesses and individuals with a unique and effective way to promote their brand. We offer a wide range of customization options to help you create the perfect water bottle for your needs. Our commitment to quality and customer satisfaction is what sets us apart.
+        {/* Why Choose Us Section */}
+        <section id="why-choose" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-3 sm:mb-4">
+                Why Choose <span className="bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">Tetra Sip</span>
+              </h3>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-0">
+                We combine premium quality with exceptional service to deliver water bottles that make a statement
               </p>
             </div>
-          </div>
-        </section>
-
-        <section id="services" className="py-24 px-6 bg-gray-50">
-          <div className="max-w-6xl mx-auto">
-            <h3 className="text-4xl font-bold text-center text-gray-800">Our Services</h3>
-            <div className="grid md:grid-cols-3 gap-12 mt-16">
-              <div className="text-center p-8 bg-white rounded-lg shadow-lg">
-                <div className="flex justify-center items-center h-24 w-24 rounded-full bg-blue-100 mx-auto">
-                  <Wind size={48} className="text-blue-500" />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-cyan-50 to-teal-50 border border-cyan-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-600 to-teal-600 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                  <Award className="text-white" size={24} />
                 </div>
-                <h4 className="text-2xl font-bold text-gray-800 mt-6">Custom Labels</h4>
-                <p className="text-gray-600 mt-2">Design your own label or work with our team to create the perfect design.</p>
+                <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Premium Quality</h4>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  We use only the finest materials and cutting-edge printing technology to ensure your bottles look stunning and last long.
+                </p>
               </div>
-              <div className="text-center p-8 bg-white rounded-lg shadow-lg">
-                <div className="flex justify-center items-center h-24 w-24 rounded-full bg-blue-100 mx-auto">
-                  <ImageIcon size={48} className="text-blue-500" />
+              <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-cyan-50 to-teal-50 border border-cyan-100 hover:shadow-xl transition-all transform hover:-translate-y-2">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-600 to-teal-600 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                  <Package className="text-white" size={24} />
                 </div>
-                <h4 className="text-2xl font-bold text-gray-800 mt-6">Bottle Options</h4>
-                <p className="text-gray-600 mt-2">Choose from a variety of bottle sizes and materials.</p>
+                <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Custom Designs</h4>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  Our expert design team works with you to create unique, eye-catching labels that perfectly represent your brand.
+                </p>
               </div>
-              <div className="text-center p-8 bg-white rounded-lg shadow-lg">
-                <div className="flex justify-center items-center h-24 w-24 rounded-full bg-blue-100 mx-auto">
-                  <Zap size={48} className="text-blue-500" />
+              <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-cyan-50 to-teal-50 border border-cyan-100 hover:shadow-xl transition-all transform hover:-translate-y-2 sm:col-span-2 lg:col-span-1">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-600 to-teal-600 rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                  <Truck className="text-white" size={24} />
                 </div>
-                <h4 className="text-2xl font-bold text-gray-800 mt-6">Fast Turnaround</h4>
-                <p className="text-gray-600 mt-2">We offer fast and reliable shipping to get your bottles to you when you need them.</p>
+                <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">Fast Delivery</h4>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                  We understand deadlines matter. Our streamlined process ensures quick turnaround times without compromising quality.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="how-it-works" className="py-24 px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-4xl font-bold text-gray-800">How It Works</h3>
-            <div className="mt-16 flex flex-col md:flex-row justify-between items-center space-y-12 md:space-y-0 md:space-x-12">
-              <div className="flex flex-col items-center">
-                <div className="flex justify-center items-center h-20 w-20 rounded-full bg-blue-100 text-blue-500 text-2xl font-bold">1</div>
-                <h4 className="text-xl font-semibold mt-4">Choose Your Bottle</h4>
+        {/* Designs Section */}
+        <section id="designs" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-cyan-50">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-3 sm:mb-4">
+                Our <span className="bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">Designs</span>
+              </h3>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-0">
+                Explore our collection of stunning custom water bottle designs for every occasion
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <div key={item} className="group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 bg-white">
+                  <div className="aspect-square bg-gradient-to-br from-cyan-100 to-teal-100 flex items-center justify-center">
+                    <div className="text-center p-4 sm:p-6 md:p-8">
+                      <div className="w-16 h-20 sm:w-20 sm:h-28 md:w-24 md:h-32 bg-gradient-to-b from-cyan-500 to-teal-500 rounded-lg mx-auto mb-3 sm:mb-4 shadow-xl"></div>
+                      <p className="text-xs sm:text-sm font-semibold text-gray-600">Design {item}</p>
+                    </div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
+                    <div className="p-4 sm:p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                      <h4 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Custom Design {item}</h4>
+                      <p className="text-xs sm:text-sm opacity-90">Perfect for events and branding</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="services" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-3 sm:mb-4">
+                Our <span className="bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">Services</span>
+              </h3>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-2 sm:px-0">
+                Comprehensive solutions for all your custom water bottle needs
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              <div className="p-5 sm:p-6 rounded-xl border-2 border-cyan-100 hover:border-cyan-500 hover:shadow-lg transition-all bg-white">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                  <Shield className="text-cyan-600" size={20} />
+                </div>
+                <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">Custom Bottles</h4>
+                <p className="text-gray-600 text-xs sm:text-sm">Wide range of sizes and styles</p>
               </div>
-              <div className="flex-1 h-1 bg-gray-200 hidden md:block"></div>
-              <div className="flex flex-col items-center">
-                <div className="flex justify-center items-center h-20 w-20 rounded-full bg-blue-100 text-blue-500 text-2xl font-bold">2</div>
-                <h4 className="text-xl font-semibold mt-4">Customize Your Label</h4>
+              <div className="p-5 sm:p-6 rounded-xl border-2 border-cyan-100 hover:border-cyan-500 hover:shadow-lg transition-all bg-white">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                  <CheckCircle className="text-cyan-600" size={20} />
+                </div>
+                <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">Healthy Water</h4>
+                <p className="text-gray-600 text-xs sm:text-sm">Pure, premium quality water</p>
               </div>
-              <div className="flex-1 h-1 bg-gray-200 hidden md:block"></div>
-              <div className="flex flex-col items-center">
-                <div className="flex justify-center items-center h-20 w-20 rounded-full bg-blue-100 text-blue-500 text-2xl font-bold">3</div>
-                <h4 className="text-xl font-semibold mt-4">Approve &amp; Order</h4>
+              <div className="p-5 sm:p-6 rounded-xl border-2 border-cyan-100 hover:border-cyan-500 hover:shadow-lg transition-all bg-white">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                  <Truck className="text-cyan-600" size={20} />
+                </div>
+                <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">Fresh Delivery</h4>
+                <p className="text-gray-600 text-xs sm:text-sm">Timely and secure delivery</p>
+              </div>
+              <div className="p-5 sm:p-6 rounded-xl border-2 border-cyan-100 hover:border-cyan-500 hover:shadow-lg transition-all bg-white">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                  <Package className="text-cyan-600" size={20} />
+                </div>
+                <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">Bulk Orders</h4>
+                <p className="text-gray-600 text-xs sm:text-sm">Special pricing for large orders</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="contact" className="py-24 px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-4xl font-bold text-gray-800">Get in Touch</h3>
-            <p className="text-gray-600 mt-4 text-lg">Have a question or ready to place an order? Fill out the form below, and we&apos;ll get back to you shortly.</p>
-            <form className="mt-12 space-y-6">
-              <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
-                <input type="text" placeholder="Your Name" className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                <input type="email" placeholder="Your Email" className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        {/* Contact Section */}
+        <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-cyan-900 to-teal-900 text-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 sm:mb-4">Get In Touch</h3>
+              <p className="text-base sm:text-lg md:text-xl text-cyan-100 max-w-2xl mx-auto px-2 sm:px-0">
+                Ready to create something amazing? Let&apos;s talk about your custom water bottle needs
+              </p>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
+              <div>
+                <form className="space-y-4 sm:space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+                    <input 
+                      type="text" 
+                      placeholder="Your Name" 
+                      className="w-full p-3 sm:p-4 text-sm sm:text-base bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent" 
+                    />
+                    <input 
+                      type="email" 
+                      placeholder="Your Email" 
+                      className="w-full p-3 sm:p-4 text-sm sm:text-base bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent" 
+                    />
+                  </div>
+                  <input 
+                    type="tel" 
+                    placeholder="Phone Number" 
+                    className="w-full p-3 sm:p-4 text-sm sm:text-base bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent" 
+                  />
+                  <textarea 
+                    placeholder="Your Message" 
+                    rows={5}
+                    className="w-full p-3 sm:p-4 text-sm sm:text-base bg-white/10 backdrop-blur-md border border-white/20 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent resize-none" 
+                  ></textarea>
+                  <button 
+                    type="submit" 
+                    className="w-full py-3 sm:py-4 text-sm sm:text-base bg-gradient-to-r from-cyan-500 to-teal-500 text-white font-bold rounded-xl hover:from-cyan-600 hover:to-teal-600 transition-all transform hover:scale-105 shadow-xl shadow-cyan-500/30"
+                  >
+                    Send Message
+                  </button>
+                </form>
               </div>
-              <textarea placeholder="Your Message" className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" rows={5}></textarea>
-              <button type="submit" className="w-full py-4 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700 transition-colors">
-                Send Message
-              </button>
-            </form>
+              <div className="space-y-6 sm:space-y-8">
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center shrink-0">
+                    <Phone className="text-cyan-400" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-bold mb-2">Phone</h4>
+                    <p className="text-sm sm:text-base text-cyan-100">+91-7739595607</p>
+                    <p className="text-sm sm:text-base text-cyan-100">+91-7992346266</p>
+                    <p className="text-sm sm:text-base text-cyan-100">+91-7970614133</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center shrink-0">
+                    <Mail className="text-cyan-400" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-bold mb-2">Email</h4>
+                    <p className="text-sm sm:text-base text-cyan-100 break-all">tetrasip04@gmail.com</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center shrink-0">
+                    <MapPin className="text-cyan-400" size={20} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg sm:text-xl font-bold mb-2">Address</h4>
+                    <p className="text-sm sm:text-base text-cyan-100">Churipatti, Kishanganj</p>
+                    <p className="text-sm sm:text-base text-cyan-100">Bihar, India, 855107</p>
+                  </div>
+                </div>
+                <div className="pt-4 sm:pt-8">
+                  <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Follow Us</h4>
+                  <div className="flex space-x-3 sm:space-x-4">
+                    <a href="#" className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 hover:bg-cyan-500 rounded-xl flex items-center justify-center transition-all">
+                      <Facebook className="text-white" size={18} />
+                    </a>
+                    <a href="#" className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 hover:bg-cyan-500 rounded-xl flex items-center justify-center transition-all">
+                      <Instagram className="text-white" size={18} />
+                    </a>
+                    <a href="#" className="w-10 h-10 sm:w-12 sm:h-12 bg-white/10 hover:bg-cyan-500 rounded-xl flex items-center justify-center transition-all">
+                      <Twitter className="text-white" size={18} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
 
-      <footer className="py-12 px-6 bg-gray-800 text-white text-center">
-        <p>&copy; 2024 Tetra Sip. All rights reserved.</p>
+      {/* Footer */}
+      <footer className="py-6 sm:py-8 px-4 sm:px-6 lg:px-8 bg-gray-900 text-gray-400 border-t border-gray-800">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-sm sm:text-base">&copy; 2024 Tetra Sip. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
