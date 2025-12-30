@@ -16,7 +16,7 @@ const Page = () => {
             <div className="shrink-0">
               <a href="#" className="flex items-center">
                 <Image 
-                  src="/images/TETRASIP.png" 
+                  src="/images/Tetra Logo.png" 
                   alt="Tetra Sip Logo" 
                   width={90} 
                   height={30}
@@ -153,18 +153,24 @@ const Page = () => {
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {[1, 2, 3, 4, 5, 6].map((item) => (
-                <div key={item} className="group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 bg-white">
-                  <div className="aspect-square bg-gradient-to-br from-[#39468D]/10 to-[#9D3875]/10 flex items-center justify-center">
-                    <div className="text-center p-4 sm:p-6 md:p-8">
-                      <div className="w-16 h-20 sm:w-20 sm:h-28 md:w-24 md:h-32 bg-gradient-to-b from-[#39468D] to-[#9D3875] rounded-lg mx-auto mb-3 sm:mb-4 shadow-xl"></div>
-                      <p className="text-xs sm:text-sm font-semibold text-gray-600">Design {item}</p>
-                    </div>
+              {[
+                { src: "/images/labels/Shrishti Sweets.jpg", title: "Shrishti Sweets", description: "Custom label for sweets brand" },
+                { src: "/images/labels/TetraSip.jpg", title: "TetraSip", description: "Brand label design" },
+                { src: "/images/labels/Wedding.jpg", title: "Wedding", description: "Elegant wedding label design" }
+              ].map((label, index) => (
+                <div key={index} className="group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 bg-white">
+                  <div className="aspect-square relative overflow-hidden bg-slate-50">
+                    <Image 
+                      src={label.src} 
+                      alt={label.title} 
+                      fill
+                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
                     <div className="p-4 sm:p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                      <h4 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Custom Design {item}</h4>
-                      <p className="text-xs sm:text-sm opacity-90">Perfect for events and branding</p>
+                      <h4 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">{label.title}</h4>
+                      <p className="text-xs sm:text-sm opacity-90">{label.description}</p>
                     </div>
                   </div>
                 </div>
